@@ -1,0 +1,14 @@
+import tensorflow as tf
+
+y = np.array([100, 120, 130, 140, 150, 160, 170, 180, 190])
+x = np.array([200, 205, 210, 220, 230, 250, 270, 280, 285])
+
+model = tf.keras.Sequential([
+        tf.keras.layers.Dense(1, input_shape=[1])
+])
+
+model.compile(optimizer='adam', loss='mse', metrics=['mae'])
+
+model.fit(x, y, epochs = 1000)
+
+model.predict([260])
